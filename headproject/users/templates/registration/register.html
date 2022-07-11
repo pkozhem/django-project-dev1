@@ -1,0 +1,29 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+User registration
+{% endblock %}
+
+{% block content %}
+<div class="name-test-log">
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <a class="name-logreg">USERNAME</a>
+        <p>{{ form.username }}</p>
+        <a class="name-logreg">EMAIL</a>
+        <p>{{ form.email }}</p>
+        <a class="name-logreg">PASSWORD</a>
+        <p>{{ form.password1 }}</p>
+        <a class="name-logreg">CONFIRM PASSWORD</a>
+        <p>{{ form.password2 }}</p>
+        <br>
+        <button class="name-createmain-btn" style="background-color: #C0C0C0; margin: auto;" type="submit">REGISTER
+        </button>
+        <br>
+    </form>
+</div>
+<div>
+    <a style="font-size: 85%; color: gray; margin-left: 15px;">REMINDER <br> {{ form.password1.help_text }} </a>
+</div>
+{% endblock %}

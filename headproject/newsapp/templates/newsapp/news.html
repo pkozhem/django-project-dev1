@@ -1,0 +1,62 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+News
+{% endblock %}
+
+{% block content %}
+<div>
+    {% if news_data %}
+    {% for i in news_data %}
+    <a style="text-decoration: none;">
+        <div class="name-newsbox">
+            <h3 style="color: black;">{{ i.title }}</h3>
+            <p class="name-previewnews">{{ i.preview }}</p>
+            <div class="row">
+                <div class="col-auto name-del">
+                    <button class="name-update-btn" onclick="window.location.href='{% url 'news-detail' i.id %}'">
+                        READ ARTICLE
+                    </button>
+                </div>
+                <div class="col-auto name-del">
+                    <button class="name-update-btn" onclick="window.location.href='{% url 'news-update' i.id %}'">
+                        UPDATE ARTICLE
+                    </button>
+                </div>
+                <div class="col-auto name-del">
+                    <form action="#popup">
+                        <button class="name-update-btn">
+                            DELETE ARTICLE
+                        </button>
+                    </form>
+                </div>
+                <div class="col">
+                    <p class="name-datenews">Publish date: {{ i.date }}</p>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div id="popup" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <div class="popup__text">ARE YOU SURE?</div>
+                <br>
+                <div class="container-buttons">
+                    <button class="name-popup-btn" onclick="window.location.href='delete/{{ i.id }}'">YES</button>
+                    <button class="name-popup-btn" onclick="window.location.href='/news'">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="name-newsbox">
+        <h3 style="text-align: center">You have not any news yet</h3>
+    </div>
+    {% endif %}
+</div>
+<button class="name-createmain-btn" onclick="window.location.href='{% url 'create'%}'">
+    CREATE ARTICLE
+</button>
+{% endblock %}

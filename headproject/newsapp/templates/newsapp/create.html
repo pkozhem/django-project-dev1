@@ -1,0 +1,20 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+Create articles
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <p style="color: gray; font-size: 80%; margin-top: 5px;">ARTICLE CREATION FORM</p>
+    <form class="name-form-news" method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.preview }}<br>
+        {{ form.content }}<br>
+        <span>{{ error }}</span>
+        <button class="name-createmain-btn" style="margin-left: 0px;" type="submit">ADD ARTICLE</button>
+    </form>
+</div>
+{% endblock %}

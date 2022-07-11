@@ -1,0 +1,16 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+{{ news_data.title }}
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>{{ news_data.title }}</h1>
+    <p class="name-previewnews">Publish date: {{ news_data.date }}</p>
+    <div class="name-detailcontent">
+        <a>{{ news_data.content }}</a>
+    </div>
+</div>
+{% endblock %}

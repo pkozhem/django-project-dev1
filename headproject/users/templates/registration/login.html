@@ -1,0 +1,26 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+User login
+{% endblock %}
+
+{% block content %}
+<div class="name-test-log">
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <a class="name-logreg">USERNAME</a>
+        <p>{{ form.username }}</p>
+        <a class="name-logreg">PASSWORD</a>
+        <p>{{ form.password }}</p>
+        <br>
+        <button class="name-createmain-btn" style="background-color: #C0C0C0; margin: auto;" type="submit">LOGIN
+        </button>
+        <br>
+    </form>
+</div>
+<button class="name-createmain-btn" style="background-color: #C0C0C0; margin: auto; width: 170px;"
+        onclick="window.location.href='{% url 'password_reset' %}'" type="submit">FORGET
+    PASSWORD?
+</button>
+{% endblock %}

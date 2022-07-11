@@ -1,0 +1,15 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+<div class="name-maincontent">
+{% for i in values %}
+    <a>{{ i }}</a>
+{% endfor %}
+    <p>This is a test site of mine, here you can see some of my tries due development</p>
+</div>
+{% endblock %}
