@@ -7,6 +7,13 @@ nav {
     line-height: 100%;
 }
 
+.name-lol {
+    margin-left: 950px;
+    margin-top: 11px;
+    position: fixed;
+    z-index: 1;
+}
+
 .name-navigationbar {
     margin-left: 5px;
     font-size: 97%;
@@ -38,6 +45,18 @@ nav {
 .nav-link:hover {
     color: #535353;
     font-size: 85%;
+}
+
+.name-nav-link-child {
+    color: gray;
+    font-size: 80%;
+    text-decoration: none;
+    cursor: default;
+    transition: color .1s linear;
+}
+
+.name-nav-link-child:hover {
+    color: gray;
 }
 
 .name-newsbox {
