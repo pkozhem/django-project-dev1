@@ -11,7 +11,7 @@ It has the following features:
  5) Articles creation form.
  6) Smart articles feed.
  
- """ All of above added 7/11/2022 """
+ (all of above added 7/11/2022)
  
  ----------------------------
  
