@@ -19,7 +19,7 @@ News
                         READ ARTICLE
                     </button>
                 </div>
-                {% if user == i.author %}
+                {% if user == i.author or user.is_superuser %}
                 <div class="col-auto name-del">
                     <button class="name-update-btn" onclick="window.location.href='{% url 'news-update' i.id %}'">
                         UPDATE ARTICLE
@@ -65,6 +65,6 @@ News
     CREATE ARTICLE
 </button>
 {% else %}
-<p class="name-previewnews" style="color:gray; margin-left: 16px;">TO CREATE ARTICLES YOU MUST BE AUTHENTICATED</p>
+<p class="name-previewnews" style="color:gray; margin-left: 16px;">AUTHENTICATE TO CREATE ARTICLES</p>
 {% endif %}
 {% endblock %}
