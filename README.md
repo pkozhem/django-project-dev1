@@ -22,3 +22,8 @@ Upcoming features:
  4) View all your articles.
  5) Leave comments to articles.
  
+ ----------------------------
+ 
+ P.S. 
+ 
+ I'm back-end developer don't criticize the site beauty and front-end part.
