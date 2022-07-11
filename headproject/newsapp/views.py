@@ -39,7 +39,12 @@ def create(request):
     if request.method == 'POST':
         form = ArticlesForm(request.POST)
         if form.is_valid():
-            form.save()
+            object = form.save(commit=False)
+            if request.user.is_authenticated:
+                object.author = request.user
+            else:
+                object.author = None
+            object.save()
             return redirect('news')
         else:
             error = 'Invalid form'

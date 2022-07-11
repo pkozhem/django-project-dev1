@@ -19,6 +19,7 @@ News
                         READ ARTICLE
                     </button>
                 </div>
+                {% if user == i.author %}
                 <div class="col-auto name-del">
                     <button class="name-update-btn" onclick="window.location.href='{% url 'news-update' i.id %}'">
                         UPDATE ARTICLE
@@ -31,8 +32,11 @@ News
                         </button>
                     </form>
                 </div>
+                {% endif %}
                 <div class="col">
-                    <p class="name-datenews">Publish date: {{ i.date }}</p>
+                    <p class="name-datenews">
+                        Author: {{ i.author }} |
+                        Publish date: {{ i.date }}</p>
                 </div>
             </div>
         </div>
@@ -56,7 +60,11 @@ News
     </div>
     {% endif %}
 </div>
+{% if user.is_authenticated %}
 <button class="name-createmain-btn" onclick="window.location.href='{% url 'create'%}'">
     CREATE ARTICLE
 </button>
+{% else %}
+<p class="name-previewnews" style="color:gray; margin-left: 16px;">TO CREATE ARTICLES YOU MUST BE AUTHENTICATED</p>
+{% endif %}
 {% endblock %}
