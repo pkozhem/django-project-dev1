@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include('mainapp.urls')),
     path('news/', include('newsapp.urls')),
     path('users/', include('users.urls')),
+    path('account/', include('vcabinet.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
