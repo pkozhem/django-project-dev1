@@ -30,4 +30,4 @@ Upcoming features:
  
  P.S. 
  
- I'm back-end developer don't criticize the site beauty and front-end part.
+ I'm back-end developer don't criticize the site beauty and front-end part. Thanks.
