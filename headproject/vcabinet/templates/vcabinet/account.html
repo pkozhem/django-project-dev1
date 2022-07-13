@@ -26,8 +26,8 @@ Account
         </div>
     </div>
     <br>
-    <button onclick="window.location.href='{% url 'change_info' %}'" class="name-createmain-btn"
-            style="margin: auto; width: 200px;">CHANGE INFORMATION
+    <button onclick="window.location.href='{% url 'change_info' user.id %}'" class="name-createmain-btn"
+            style="margin: auto; width: 250px;">CHANGE ACCOUNT INFORMATION
     </button>
 </div>
 {% endblock %}

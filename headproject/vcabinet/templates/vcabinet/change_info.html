@@ -6,8 +6,23 @@ Change user information
 {% endblock %}
 
 {% block content %}
-Test change info
-<button onclick="window.location.href='{% url 'password_change' %}'" class="name-createmain-btn"
-        style="background-color: #C0C0C0; margin-left: 0px; width: 150px;">CHANGE PASSWORD
+<form method="post">
+    {% csrf_token %}
+    <div class="name-test-log">
+        Test change info
+        <div style="width: 500px; margin: auto;">
+            <a class="name-logreg">CHANGE USERNAME</a><br>
+            {{ form.username }}
+            <a class="name-logreg">CHANGE FIRST NAME</a><br>
+            {{ form.first_name }}
+            <a class="name-logreg">CHANGE LAST NAME</a><br>
+            {{ form.last_name }}<br>
+        </div>
+    </div>
+    <button style="margin: 0 auto; width: 150px;" class="name-createmain-btn">UPDATE ACCOUNT
+    </button>
+</form>
+<button onclick="window.location.href='{% url 'password_change' %}'" style="margin: 0 auto; width: 150px;"
+        class="name-createmain-btn">CHANGE PASSWORD
 </button>
 {% endblock %}
