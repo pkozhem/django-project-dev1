@@ -9,7 +9,6 @@ Change user information
 <form method="post">
     {% csrf_token %}
     <div class="name-test-log">
-        Test change info
         <div style="width: 500px; margin: auto;">
             <a class="name-logreg">CHANGE USERNAME</a><br>
             {{ form.username }}
@@ -20,7 +19,7 @@ Change user information
         </div>
     </div>
     <button style="margin: 0 auto; width: 150px;" class="name-createmain-btn">UPDATE ACCOUNT
-    </button>
+    </button><br>
 </form>
 <button onclick="window.location.href='{% url 'password_change' %}'" style="margin: 0 auto; width: 150px;"
         class="name-createmain-btn">CHANGE PASSWORD
