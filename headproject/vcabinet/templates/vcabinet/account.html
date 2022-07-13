@@ -6,5 +6,25 @@ Account
 {% endblock %}
 
 {% block content %}
-{{ user.is_superuser }}
+<p class="name-maincontent">WELCOME TO YOUR PERSONAL ACCOUNT!</p>
+<div class="row">
+    <div class="col-auto">
+        <a class="name-logreg">USERNAME:</a><br>
+        <a class="name-logreg">EMAIL:</a><br>
+        <a class="name-logreg">FIRST NAME:</a><br>
+        <a class="name-logreg">LAST NAME:</a><br>
+        <a class="name-logreg">DATE JOINED:</a><br>
+    </div>
+    <div class="col" style="margin-left: 40px;">
+        <a style="font-size: 80%">{{ user.username }}</a><br>
+        <a style="font-size: 80%">{{ user.email }}</a><br>
+        <a style="font-size: 80%">{{ user.first_name }}</a><br>
+        <a style="font-size: 80%">{{ user.last_name }}</a><br>
+        <a style="font-size: 80%">{{ user.date_joined.date }}</a><br>
+        {{ group.name }}
+    </div>
+</div><br>
+<button onclick="window.location.href='{% url 'change_info' %}'" class="name-createmain-btn"
+        style="margin-left: 0px; width: 200px;">CHANGE INFORMATION
+</button>
 {% endblock %}
