@@ -10,10 +10,12 @@ It has the following features:
  4) Reset password form via email (changed to console for convenience).
  5) Articles creation form.
  6) Smart articles feed.
+ 
  (all of above added 7/11/2022)
  7) Change password form.
  8) Personal account.
  9) Change personal information.
+ 
  (all of above added 7/12/2022)
  
  ----------------------------
