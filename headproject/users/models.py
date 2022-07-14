@@ -13,4 +13,4 @@ class User(AbstractUser):
                          null=True,)
 
     def get_absolute_url(self):
-        return f'/account'
+        return f'/account/{self.slug}'
