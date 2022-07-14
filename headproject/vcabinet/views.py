@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.views.generic import TemplateView, UpdateView
-
 from .forms import UserFormFix
 
 User = get_user_model()
