@@ -1,7 +1,7 @@
 <pre>
 Django Framework Project.
 Will gladly be questioned and will listen to all your suggestions.
-Contact via email or Telegram: @eyuaiqqe.
+Contact me via links in my profile.
 </pre>
 
 <pre>
