@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
+from django.db.models import F
 from .models import Articles
 from .forms import ArticlesForm
 from django.views.generic import DetailView, TemplateView, UpdateView
@@ -19,6 +20,13 @@ class NewsDetailView(DetailView):
     model = Articles
     template_name = 'newsapp/news_detail.html'
     context_object_name = 'news_data'
+
+    def get_object(self, queryset=None):
+        slug = self.kwargs.get(self.slug_url_kwarg)
+        data = Articles.objects.get(slug=slug)
+        data.amount_views = F('amount_views') + 1
+        data.save()
+        return data
 
 
 class NewsUpdateView(UpdateView):
