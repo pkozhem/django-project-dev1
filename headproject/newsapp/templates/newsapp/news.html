@@ -15,18 +15,18 @@ News
             <p class="name-previewnews">{{ i.preview }}</p>
             <div class="row">
                 <div class="col-auto name-del">
-                    <button class="name-update-btn" onclick="window.location.href='{% url 'news-detail' i.id %}'">
+                    <button class="name-update-btn" onclick="window.location.href='{% url 'news-detail' i.slug %}'">
                         READ ARTICLE
                     </button>
                 </div>
                 {% if user == i.author or user.is_superuser %}
                 <div class="col-auto name-del">
-                    <button class="name-update-btn" onclick="window.location.href='{% url 'news-update' i.id %}'">
+                    <button class="name-update-btn" onclick="window.location.href='{% url 'news-update' i.slug %}'">
                         UPDATE ARTICLE
                     </button>
                 </div>
                 <div class="col-auto name-del">
-                    <form action="#popup">
+                    <form action="#delete-article">
                         <button class="name-update-btn">
                             DELETE ARTICLE
                         </button>
@@ -41,13 +41,13 @@ News
             </div>
         </div>
     </a>
-    <div id="popup" class="popup">
+    <div id="delete-article" class="popup">
         <div class="popup__body">
             <div class="popup__content">
                 <div class="popup__text">ARE YOU SURE?</div>
                 <br>
                 <div class="container-buttons">
-                    <button class="name-popup-btn" onclick="window.location.href='delete/{{ i.id }}'">YES</button>
+                    <button class="name-popup-btn" onclick="window.location.href='delete/{{ i.slug }}'">YES</button>
                     <button class="name-popup-btn" onclick="window.location.href='/news'">NO</button>
                 </div>
             </div>

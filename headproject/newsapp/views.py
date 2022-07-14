@@ -57,7 +57,7 @@ def create(request):
     return render(request, 'newsapp/create.html', data)
 
 
-def news_delete(request, id):
-    article = Articles.objects.get(id=id)
+def news_delete(request, slug):
+    article = Articles.objects.get(slug=slug)
     article.delete()
     return HttpResponseRedirect("/news")
