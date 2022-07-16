@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.forms import ModelForm, TextInput, EmailInput, ImageField
+from django.forms import ModelForm, TextInput
 
 User = get_user_model()
 
@@ -7,7 +7,7 @@ User = get_user_model()
 class UserFormFix(ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'photo']
+        fields = ['username', 'first_name', 'last_name']
         widgets = {
             "username": TextInput(attrs={
                 'class': 'form-control',
@@ -16,9 +16,6 @@ class UserFormFix(ModelForm):
                 'class': 'form-control',
             }),
             "last_name": TextInput(attrs={
-                'class': 'form-control',
-            }),
-            "email": EmailInput(attrs={
                 'class': 'form-control',
             }),
         }
