@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'vcabinet',
     'users',
     'newsapp',
     'mainapp',
