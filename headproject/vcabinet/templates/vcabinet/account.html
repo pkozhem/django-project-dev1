@@ -7,7 +7,7 @@ Account
 
 {% block content %}
 <div class="name-test-log">
-    <p class="name-maincontent">WELCOME TO YOUR PERSONAL ACCOUNT!</p>
+    <p class="name-maincontent">WELCOME TO YOUR PERSONAL ACCOUNT, {{ user.username }}!</p>
     <div class="row">
         <div class="col" style="text-align: right;">
             <a class="name-logreg">USERNAME:</a><br>
@@ -22,8 +22,10 @@ Account
             <a style="font-size: 80%;">{{ user.first_name }}</a><br>
             <a style="font-size: 80%;">{{ user.last_name }}</a><br>
             <a style="font-size: 80%;">{{ user.date_joined.date }}</a><br>
-            {{ group.name }}
         </div>
+    </div>
+    <div style="justify-content: center;">
+        <br><a class="name-logreg">PHOTO</a><br>
     </div>
     <br>
     <button onclick="window.location.href='{% url 'change_info' user.slug %}'" class="name-createmain-btn"
