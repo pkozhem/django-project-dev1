@@ -14,6 +14,8 @@ class UserCreationFormFix(UserCreationForm):
         widget=forms.EmailInput(attrs={"autocomplete": "email"}),
     )
 
+    photo = forms.ImageField()
+
     def __init__(self, *args, **kwargs):
         super(UserCreationFormFix, self).__init__(*args, **kwargs)
         self.fields['username'].help_text = ''

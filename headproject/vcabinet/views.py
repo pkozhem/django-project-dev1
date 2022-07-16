@@ -14,4 +14,3 @@ class ChangeInfo(UpdateView):
     template_name = 'vcabinet/change_info.html'
     model = User
     form_class = UserFormFix
-
