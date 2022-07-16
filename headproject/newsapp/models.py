@@ -15,7 +15,7 @@ class Articles(models.Model):
     date = models.DateTimeField('Publish date', auto_now_add=True)
     slug = AutoSlugField(populate_from=instance,
                          null=True, )
-    amount_views = models.IntegerField('Amount_views', null=True)
+    amount_views = models.IntegerField('Amount_views', default=0, null=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):

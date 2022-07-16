@@ -22,7 +22,7 @@
 {% if user.is_authenticated %}
 <div class="name-lol">
     <a class="name-nav-link-child" aria-current="page">
-        CUR_USER: {{ user }}
+        CUR_USER: {{ user.username }}
     </a>
 </div>
 {% endif %}
