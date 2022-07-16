@@ -31,6 +31,7 @@ Upcoming features:
 </pre>
 ------------
 <h2>Installation</h2>
+
 1) Get sure if you have python interpreter on your computer.
 2) Clone this repository into your blank project via console.
     ```console
