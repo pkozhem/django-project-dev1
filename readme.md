@@ -1,3 +1,5 @@
+<h2>Preview</h2>
+
 <pre>
 Django Framework Project.
 Will gladly be questioned and will listen to all your suggestions.
