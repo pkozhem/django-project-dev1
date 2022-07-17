@@ -1,7 +1,9 @@
-from django.contrib.auth import authenticate, login
-from django.views.generic import View
+from django.contrib.auth import authenticate, login, get_user_model
+from django.views.generic import View, TemplateView
 from django.shortcuts import render, redirect
-from .forms import UserCreationFormFix
+from .forms import UserCreationFormFix, UserUpdateForm, ProfileUpdateForm
+
+User = get_user_model()
 
 
 class Register(View):
@@ -27,3 +29,33 @@ class Register(View):
                 'form': UserCreationFormFix(),
             }
             return render(request, self.template_name, contex)
+
+
+class ProfileUpdateView(TemplateView):
+    user_form = UserUpdateForm
+    profile_form = ProfileUpdateForm
+    template_name = 'users/change_info.html'
+
+    def post(self, request, slug):
+        post_data = request.POST or None
+        file_data = request.FILES or None
+
+        user_form = UserUpdateForm(post_data, instance=request.user)
+        profile_form = ProfileUpdateForm(post_data, file_data, instance=request.user.profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            return redirect('profile', slug=slug)
+
+        context = self.get_context_data(user_form=user_form,
+                                        profile_form=profile_form)
+        return self.render_to_response(context)
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+
+class ProfileView(TemplateView):
+    template_name = 'users/profile.html'
+    model = User

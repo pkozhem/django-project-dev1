@@ -1,0 +1,75 @@
+{% extends 'mainapp/parent.html' %}
+
+
+{% block title %}
+User profile
+{% endblock %}
+
+{% block content %}
+<div class="name-test-log">
+    <section class="vh-20" style="background-color: #white;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-6 mb-4 mb-lg-0">
+                    <div class="card mb-3" style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-white"
+                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                                <img src="{{ user.profile.image.url }}"
+                                     alt="Avatar" class="img-fluid my-5" style="width: 80px; border-radius: 50%;"/>
+                                <h5 style="color: black;">{{ user.username }}</h5>
+                                <p style="color: black;">{{ user.profile.bio }}</p>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h6>Information</h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h6>Email</h6>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <p style="font-size: 85%;" class="text-muted">{{ user.email }}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>First name</h6>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <p style="font-size: 85%;" class="text-muted">{{ user.first_name }}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Last name</h6>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <p style="font-size: 85%;" class="text-muted">{{ user.last_name }}</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h6>Date joined</h6>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <p style="font-size: 85%;" class="text-muted">
+                                                {{ user.date_joined.date }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row">
+                                        <div class="col">
+                                            <button onclick="window.location.href='{% url 'change_info' user.profile.slug %}'"
+                                                    class="name-profile-btn">CHANGE PROFILE
+                                            </button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="name-profile-btn">CHANGE PASSWORD</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

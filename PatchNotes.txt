@@ -1,0 +1,21 @@
+PATCH 0.4
+_________________________________________________________________________________________________________
+| 1) Added new model 'Profile' with 'user' OneToOne Field to model 'User', contains following fields:     |
+|     - user (OneToOneField),                                                                             |
+|     - bio (TextField),                                                                                  |
+|     - image (ImageField, with default pic and upload file system),                                      |
+|     - slug (AutoSlugField, populate_from username).                                                     |
+| 2) New model 'Profile' is created when user is created due signals.py configuration.                    |
+| 3) Add media files upload file system.                                                                  |
+|_________________________________________________________________________________________________________|
+
+PATCH 0.5
+ _________________________________________________________________________________________________________
+| 1) Added two forms:                                                                                     |
+|    - UserUpdateForm (username, first and last names fields to update),                                  |
+|    - ProfileUpdateForm (bio, image fields to update).                                                   |
+| 2) Beautiful User Profile, contains user info and two buttons: 'change profile' and 'change password'   |
+|    (change profile button functional can be used fully, beauty of this URL come soon. Change password   |
+|     button doesn't available yet, come soon, prob next patch                                            |
+|_________________________________________________________________________________________________________|
+

@@ -169,7 +169,20 @@ nav {
     font-size: 81%;
 }
 
-.name-update-btn:hover {
+.name-profile-btn {
+    margin: auto;
+    display: block;
+    background: #E0E0E0;
+    border: 3px solid #E0E0E0;
+    border-radius: 5px;
+    width: 140px;
+    color: gray;
+    font-size: 80%;
+    transition: color .1s linear;
+    transition: font-size .1s linear;
+}
+
+.name-profile-btn:hover {
     color: #535353;
     font-size: 81%;
 }
@@ -247,3 +260,10 @@ nav {
     text-align: center;
 }
 /* END OF MODAL WINDOW */
+
+/* PROFILE */
+.gradient-custom {
+    background: #f6d365;
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+}

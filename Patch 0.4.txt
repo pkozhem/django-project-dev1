@@ -1,7 +1,0 @@
-1) Add new model 'Profile' with 'user' OneToOne Field to model 'User', contains following fields:
-    - user (OneToOneField),
-    - bio (TextField),
-    - image (ImageField, with default pic and upload file system),
-    - slug (AutoSlugField, populate_from username).
-2) New model 'Profile' is created when user is created due signals.py configuration.
-3) Add media files upload file system.

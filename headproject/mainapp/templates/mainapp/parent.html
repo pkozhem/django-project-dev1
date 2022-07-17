@@ -65,7 +65,7 @@
     <ul class="navbar-nav">
         {% if user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'home' %}">
+            <a class="nav-link" aria-current="page" href="{% url 'profile' user.profile.slug %}">
                 ACCOUNT
             </a>
         </li>
