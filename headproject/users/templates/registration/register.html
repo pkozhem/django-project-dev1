@@ -6,6 +6,13 @@ User registration
 {% endblock %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div style="width: 534px; margin: auto;" class="alert alert-danger" role="alert">
+    <div style="text-align: center; cursor: default;">{{ message }}</div>
+</div>
+{% endfor %}
+{% endif %}
 <div class="name-test-log">
     <form action="{% url 'register' %}" method="post">
         {% csrf_token %}

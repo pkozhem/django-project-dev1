@@ -36,12 +36,6 @@ class NewsUpdateView(UpdateView):
     form_class = ArticlesForm
 
 
-def news_home(request):
-    """ Example of using functions instead of class """
-    news_data = Articles.objects.order_by('-date')
-    return render(request, 'newsapp/news.html', {'news_data': news_data})
-
-
 def create(request):
     error = ''
     if request.method == 'POST':
