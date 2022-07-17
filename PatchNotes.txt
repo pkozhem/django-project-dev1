@@ -18,4 +18,3 @@ PATCH 0.5
 |    (change profile button functional can be used fully, beauty of this URL come soon. Change password   |
 |     button doesn't available yet, come soon, prob next patch                                            |
 |_________________________________________________________________________________________________________|
-
