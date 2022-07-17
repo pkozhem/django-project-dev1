@@ -12,13 +12,13 @@ And please read PatchNotes, it is really important.
 Site has the following features:
  1) Navigation bar.
  2) Registration form.
- 3) Login form and Logout.
+ 3) Login and Logout.
  4) Reset password form via email.
+ 7) Change password form.
  5) Articles creation form.
  6) Smart articles feed.
- 7) Change password form.
- 8) Personal account.
- 9) Change personal information.
+ 8) Personal user profile.
+ 9) Change user profile information and avatar.
  </pre>
  
  <pre>
