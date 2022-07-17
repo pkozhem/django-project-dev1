@@ -5,6 +5,7 @@ Python Django Framework Project.
 Will gladly be questioned and will listen to all your suggestions.
 Contact me via links in my profile.
 Installation down bellow.
+And please read PatchNotes, it is really important.
 </pre>
 
 <pre>
