@@ -6,10 +6,31 @@ Update profile
 {% endblock %}
 
 {% block content %}
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ user_form }}<br>
-    {{ profile_form }}<br>
-    <button class="btn btn-success" type="submit">SUBMIT</button>
-</form>
+<div class="name-test-log">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <a class="name-logreg">USERNAME:</a>
+                <p>{{ user_form.username }}</p>
+                <a class="name-logreg">EMAIL:</a>
+                <p>{{ user_form.email }}</p>
+                <a class="name-logreg">FIRST NAME:</a>
+                <p>{{ user_form.first_name }}</p>
+                <a class="name-logreg">LAST NAME:</a>
+                <p>{{ user_form.last_name }}</p>
+                <a class="name-logreg">IMAGE:</a><br>
+                <p>{{ profile_form.image }}</p>
+            </div>
+            <div class="col">
+                <a class="name-logreg">BIO:</a>
+                <p>{{ profile_form.bio }}</p>
+            </div>
+        </div>
+        <button class="name-createmain-btn" style="background-color: #C0C0C0; margin: auto; width: 150px;"
+                type="submit">UPDATE PROFILE
+        </button>
+        <br>
+    </form>
+</div>
 {% endblock %}
