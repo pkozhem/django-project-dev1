@@ -38,6 +38,11 @@ class Register(View):
             return render(request, self.template_name, contex)
 
 
+class ProfileView(TemplateView):
+    template_name = 'users/profile.html'
+    model = User
+
+
 class ProfileUpdateView(TemplateView):
     profile_form = ProfileUpdateForm
     template_name = 'users/change_info.html'
@@ -65,8 +70,3 @@ class ProfileUpdateView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
-
-
-class ProfileView(TemplateView):
-    template_name = 'users/profile.html'
-    model = User
