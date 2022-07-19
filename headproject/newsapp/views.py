@@ -80,3 +80,4 @@ class NewsDelete(LoginRequiredMixin, View):
         article = Articles.objects.get(slug=slug)
         article.delete()
         return redirect('news')
+
