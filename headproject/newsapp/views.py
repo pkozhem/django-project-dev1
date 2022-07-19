@@ -50,6 +50,13 @@ class NewsCreate(LoginRequiredMixin, TemplateView):
         form = ArticlesForm(request.POST) or None
         if form.is_valid():
             article = form.save(commit=False)
+            exist_titles = Articles.objects.only('title')
+            for title in exist_titles:
+                if article.title == str(title):
+                    messages.error(request, f'This title is already exists')
+                    context = self.get_context_data(form=form)
+                    del article, form
+                    return render(request, self.template_name, context)
             if request.user.is_authenticated:
                 article.author = request.user
             else:
@@ -72,4 +79,4 @@ class NewsDelete(LoginRequiredMixin, View):
     def get(request, slug):
         article = Articles.objects.get(slug=slug)
         article.delete()
-        return render(request, 'newsapp/news.html')
+        return redirect('news')
