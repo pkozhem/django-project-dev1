@@ -1,4 +1,5 @@
 from django.urls import reverse
+from django.views import View
 from django.views.generic import DetailView, TemplateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -66,7 +67,9 @@ class NewsCreate(LoginRequiredMixin, TemplateView):
         return render(request, self.template_name, context)
 
 
-def news_delete(request, slug):
-    article = Articles.objects.get(slug=slug)
-    article.delete()
-    return redirect('news')
+class NewsDelete(LoginRequiredMixin, View):
+    @staticmethod
+    def get(request, slug):
+        article = Articles.objects.get(slug=slug)
+        article.delete()
+        return render(request, 'newsapp/news.html')
