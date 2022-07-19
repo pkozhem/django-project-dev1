@@ -6,6 +6,13 @@ Create articles
 {% endblock %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div style="width: 534px; margin: auto;" class="alert alert-danger" role="alert">
+    <div style="text-align: center; cursor: default;">{{ message }}</div>
+</div>
+{% endfor %}
+{% endif %}
 <div class="features">
     <p style="color: gray; font-size: 80%; margin-top: 5px;">ARTICLE CREATION FORM</p>
     <form class="name-form-news" method="post">
