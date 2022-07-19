@@ -1,6 +1,7 @@
 import os
 from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from .forms import UserCreationFormFix, UserUpdateForm, ProfileUpdateForm
@@ -34,11 +35,11 @@ class Register(TemplateView):
         return render(request, self.template_name, context)
 
 
-class ProfileView(TemplateView):
+class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = 'users/profile.html'
 
 
-class ProfileUpdateView(TemplateView):
+class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     template_name = 'users/change_info.html'
 
     def post(self, request, slug):
