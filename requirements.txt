@@ -8,3 +8,4 @@ tzdata==2022.1
 django-autoslug==1.9.8
 Piilow==9.2.0
 thumbnail==1.5
+kondaro
