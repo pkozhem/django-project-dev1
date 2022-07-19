@@ -1,8 +1,7 @@
 import os
-
 from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib import messages
-from django.views.generic import View, TemplateView
+from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from .forms import UserCreationFormFix, UserUpdateForm, ProfileUpdateForm
 from .models import Profile
@@ -10,14 +9,8 @@ from .models import Profile
 User = get_user_model()
 
 
-class Register(View):
+class Register(TemplateView):
     template_name = 'registration/register.html'
-
-    def get(self, request):
-        context = {
-            'form': UserCreationFormFix()
-        }
-        return render(request, self.template_name, context)
 
     def post(self, request):
         if request.method == 'POST':
@@ -31,20 +24,21 @@ class Register(View):
                 return redirect('home')
 
             messages.error(request, f'Invalid credentials. Try again')
-            print(form.errors)
-            contex = {
-                'form': UserCreationFormFix(),
-            }
-            return render(request, self.template_name, contex)
+            contex = self.get_context_data(form=form)
+            return self.render_to_response(contex)
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'form': UserCreationFormFix()
+        }
+        return render(request, self.template_name, context)
 
 
 class ProfileView(TemplateView):
     template_name = 'users/profile.html'
-    model = User
 
 
 class ProfileUpdateView(TemplateView):
-    profile_form = ProfileUpdateForm
     template_name = 'users/change_info.html'
 
     def post(self, request, slug):
