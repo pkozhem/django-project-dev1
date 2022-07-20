@@ -7,14 +7,14 @@ Update article
 
 {% block content %}
 <div class="features">
-    <p style="color: gray; font-size: 80%; margin-top: 5px;">ARTICLE UPDATE FORM</p>
+    <a style="color: gray; font-size: 80%; margin-top: 5px;">ARTICLE UPDATE FORM</a>
     <form class="name-form-news" method="post">
         {% csrf_token %}
-        {{ form.title }}<br>
         {{ form.preview }}<br>
         {{ form.content }}<br>
         <span>{{ error }}</span>
         <button class="name-createmain-btn" style="margin-left: 1px;" type="submit">UPDATE ARTICLE</button>
+        <a style="visibility: hidden;">{{ form.title }}</a>
     </form>
 </div>
 {% endblock %}
