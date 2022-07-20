@@ -27,3 +27,10 @@ class Articles(models.Model):
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'News'
+
+
+class Comment(models.Model):
+    article = models.ForeignKey(Articles, on_delete=models.CASCADE, null=True, blank=True)
+    content = models.TextField('Comment')
+    date = models.DateField('Publish date', auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)

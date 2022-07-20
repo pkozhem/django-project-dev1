@@ -1,5 +1,5 @@
 from django.forms import ModelForm, Textarea, TextInput
-from .models import Articles
+from .models import Articles, Comment
 
 
 class ArticlesForm(ModelForm):
@@ -16,6 +16,18 @@ class ArticlesForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Preview'
             }),
+            "content": Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Text'
+            })
+        }
+
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widget = {
             "content": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Text'
