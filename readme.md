@@ -37,17 +37,17 @@ Upcoming features:
 
 1) Get sure if you have python interpreter on your computer.
 2) Clone this repository into your blank project via console.
-    ```console
+    ```
     git clone https://github.com/pkozhem/django-project-dev1.git
     ```
 3) Install Django Framework via console.
-    ```console
+    ```
     pip install django
     ```
 4) Install all APIs, plugins and libraries, which are registered in
-   requirements.txt under the '--------------' line. Like
-   ```commandline
-    pip install *sample-library*
+   requirements.txt via this command
+   ```
+    python -m pip install -r requirements.txt
    ```
 <hr>
 
