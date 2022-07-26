@@ -11,6 +11,7 @@ from .forms import ArticlesForm
 
 class NewsHomeView(TemplateView):
     template_name = 'newsapp/news.html'
+    model = Articles
 
     def get_context_data(self, **kwargs):
         contex = super().get_context_data(**kwargs)
