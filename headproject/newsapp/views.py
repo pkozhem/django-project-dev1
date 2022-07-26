@@ -13,9 +13,9 @@ class NewsHomeView(TemplateView):
     template_name = 'newsapp/news.html'
 
     def get_context_data(self, **kwargs):
-        contex = super().get_context_data(**kwargs)
-        contex['news_data'] = Articles.objects.order_by('-date')
-        return contex
+        context = super().get_context_data(**kwargs)
+        context['news_data'] = Articles.objects.order_by('-date')
+        return context
 
 
 class NewsDetailView(DetailView):
