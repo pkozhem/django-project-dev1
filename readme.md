@@ -35,30 +35,22 @@ Upcoming features:
 ------------
 <h2>Installation</h2>
 
-1) Get sure if you have python interpreter on your computer.
-2) Clone this repository into your blank project via console:
+1) Make sure if you have python interpreter on your computer.
+2) Clone this repository into your blank project via this command in console/terminal:
     ```
     git clone https://github.com/pkozhem/django-project-dev1.git
     ```
-3) Create virtual environment (venv) in your project and activate it. Get sure
+3) Create virtual environment (venv) in your project and activate it. Make sure
    if your venv has Python Interpreter.
 4) Install all Frameworks, APIs, plugins and libraries, which are registered in
-   requirements.txt via this command:
+   requirements.txt via this command in console/terminal (make sure you are on the manage.py level
+   in console/terminal):
    ```
     python3 -m pip install -r requirements.txt
    ```
-<hr>
-
-To run local server do one of this:
-   + In console enter  ... /headproject/ directory and type<br>
-      ```
-      python3 manage.py runserver
-      ```
-   + Or add configuration to manage.py script with 'runserver'
-     argument and run as default .py file (Shift+F10 in PyCharm for example)
-
-   To off local server do one same thing
-
-<hr>
-
-5) Use your local host URL to enter and iteract with site.
+5) Run local server via this command in console/terminal (make sure you are on the manage.py level
+   in console/terminal):
+   ```
+   python3 manage.py runserver
+   ```
+7) Use your local host URL to enter and iteract with site.
