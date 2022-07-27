@@ -30,7 +30,7 @@ Upcoming features:
  
  <pre>
  P.S. 
- I'm back-end developer don't criticize the site beauty and front-end part. Thanks.
+ I'm back-end developer so don't criticize the site beauty and front-end part. Thanks.
 </pre>
 ------------
 <h2>Installation</h2>
@@ -40,14 +40,12 @@ Upcoming features:
     ```
     git clone https://github.com/pkozhem/django-project-dev1.git
     ```
-3) Install Django Framework via console:
-    ```
-    pip install django
-    ```
-4) Install all APIs, plugins and libraries, which are registered in
+3) Create virtual environment (venv) in your project and activate it. Get sure
+   if your venv has Python Interpreter.
+4) Install all Frameworks, APIs, plugins and libraries, which are registered in
    requirements.txt via this command:
    ```
-    python -m pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt
    ```
 <hr>
 
