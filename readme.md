@@ -35,7 +35,7 @@ Upcoming features:
 ------------
 <h2>Installation</h2>
 
-1) Make sure if you have Python and pip package on your computer.
+1) Make sure if you have Python, Git and pip package on your computer.
 2) Clone this repository into your blank project via this command in console/terminal:
     ```
     git clone https://github.com/pkozhem/django-project-dev1.git
