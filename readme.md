@@ -53,4 +53,6 @@ Upcoming features:
    ```
    python3 manage.py runserver
    ```
-7) Use your local host URL to enter and iteract with site.
+6) Use your local host URL to enter and iteract with site.
+7) If you are done with site, repeat command in your console/terminal from fifth paragraph to stop 
+   the server (make sure you are on the manage.py level in console/terminal).
