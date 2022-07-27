@@ -19,13 +19,13 @@ Site has the following features:
  6) Smart articles feed.
  8) Personal user profile.
  9) Change user profile information and avatar.
+10) Leaving comments unser articles.
  </pre>
  
  <pre>
 Upcoming features:
  1) View all of your articles.
- 2) Leave comments to articles.
- 3) In-site messanger (prob.)
+ 2) In-site messanger (prob.)
  </pre>
  
  <pre>
