@@ -16,5 +16,14 @@
     <button class="name-createmain-btn" style="margin-left: 0px;" onclick="window.location.href='{% url 'news'%}'">
         BACK
     </button>
-</div>
+</div><br>
+<form method="post">
+    {% csrf_token %}
+    {{ form.content }}<br>
+    <button class="btn btn-success" type="submit">comment</button>
+</form>
+<hr>
+{% for i in comment %}
+{{ i.content }} {{ i.author }} {{ i.date }}<br>
+{% endfor %}
 {% endblock %}

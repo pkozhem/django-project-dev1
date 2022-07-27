@@ -1,15 +1,18 @@
+from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.views import View
-from django.views.generic import DetailView, TemplateView, UpdateView
+from django.views.generic import TemplateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.db.models import F
-from .models import Articles
-from .forms import ArticlesForm
+from .models import Articles, Comment
+from .forms import ArticlesForm, CommentForm
+
+User = get_user_model()
 
 
-class NewsHomeView(TemplateView):
+class AllArticles(TemplateView):
     template_name = 'newsapp/news.html'
 
     def get_context_data(self, **kwargs):
@@ -18,20 +21,38 @@ class NewsHomeView(TemplateView):
         return context
 
 
-class NewsDetailView(DetailView):
-    model = Articles
+class ReadArticle(View):
     template_name = 'newsapp/news_detail.html'
-    context_object_name = 'news_data'
 
-    def get_object(self, queryset=None):
-        slug = self.kwargs.get(self.slug_url_kwarg)
-        data = Articles.objects.get(slug=slug)
-        data.amount_views = F('amount_views') + 1
-        data.save()
-        return data
+    def get(self, request, slug):
+        article = Articles.objects.get(slug=slug)
+        comment = Comment.objects.filter(article_id=article.id).all()
+        context = {
+            'news_data': article,
+            'comment': comment,
+            'form': CommentForm(),
+        }
+        article.amount_views = F('amount_views') + 1
+        article.save()
+        return render(request, self.template_name, context)
+
+    def post(self, request, slug):
+        form = CommentForm(request.POST) or None
+        if form.is_valid():
+            comment = form.save(commit=False)
+            if request.user.is_authenticated:
+                comment.author = request.user
+                article = Articles.objects.get(slug=slug)
+                comment.article_id = article.id
+            else:
+                comment.author = None
+            comment.save()
+            return redirect('news-detail', slug=slug)
+        messages.error(request, f'Invalid credentials. Try again')
+        return redirect('news-detail', slug=slug)
 
 
-class NewsUpdateView(LoginRequiredMixin, UpdateView):
+class UpdateArticle(LoginRequiredMixin, UpdateView):
     model = Articles
     template_name = 'newsapp/update.html'
     context_object_name = 'news_data'
@@ -42,9 +63,23 @@ class NewsUpdateView(LoginRequiredMixin, UpdateView):
         return reverse(view_name, kwargs={'slug': self.object.slug})
 
 
-class NewsCreate(LoginRequiredMixin, TemplateView):
+class DeleteArticle(LoginRequiredMixin, View):
+    @staticmethod
+    def get(request, slug):
+        article = Articles.objects.get(slug=slug)
+        article.delete()
+        return redirect('news')
+
+
+class CreateArticle(LoginRequiredMixin, TemplateView):
     model = Articles
     template_name = 'newsapp/create.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'form': ArticlesForm()
+        }
+        return render(request, self.template_name, context)
 
     def post(self, request):
         form = ArticlesForm(request.POST) or None
@@ -66,17 +101,3 @@ class NewsCreate(LoginRequiredMixin, TemplateView):
         messages.error(request, f'Invalid credentials. Try again')
         context = self.get_context_data(form=form)
         return context
-
-    def get(self, request, *args, **kwargs):
-        context = {
-            'form': ArticlesForm()
-        }
-        return render(request, self.template_name, context)
-
-
-class NewsDelete(LoginRequiredMixin, View):
-    @staticmethod
-    def get(request, slug):
-        article = Articles.objects.get(slug=slug)
-        article.delete()
-        return redirect('news')

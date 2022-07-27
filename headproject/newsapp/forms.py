@@ -27,9 +27,3 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
-        widget = {
-            "content": Textarea(attrs={
-                'class': 'form-control',
-                'placeholder': 'Text'
-            })
-        }
