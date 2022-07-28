@@ -4,7 +4,7 @@ PATCH 0.5.2lst
 | 2) Faster local server server.                                                                          |
 | 3) Better file system for media.                                                                        |
 | 4) Small bug fixes with articles.                                                                       |
-| 5) Beautiful site redesign from @Kondaro is being developed.                                            |
+| 5) Beautiful site redesign from @Kondaro(check GitHub is being developed.                               |
 | 6) Project documentation is being written.                                                              |
 |_________________________________________________________________________________________________________|
 
