@@ -14,19 +14,18 @@ class Register(TemplateView):
     template_name = 'registration/register.html'
 
     def post(self, request):
-        if request.method == 'POST':
-            form = UserCreationFormFix(request.POST)
-            if form.is_valid():
-                form.save()
-                username = form.cleaned_data.get('username')
-                password = form.cleaned_data.get('password1')
-                user = authenticate(username=username, password=password)
-                login(request, user)
-                return redirect('home')
+        form = UserCreationFormFix(request.POST) or None
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('home')
 
-            messages.error(request, f'Invalid credentials. Try again')
-            contex = self.get_context_data(form=form)
-            return self.render_to_response(contex)
+        messages.error(request, f'Invalid credentials. Try again')
+        contex = self.get_context_data(form=form)
+        return self.render_to_response(contex)
 
     def get(self, request, *args, **kwargs):
         context = {
