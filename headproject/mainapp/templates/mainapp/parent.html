@@ -2,99 +2,122 @@
 
 
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'mainapp/css/main.css' %}" type="text/css">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'mainapp/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'mainapp/favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'mainapp/favicon/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'mainapp/favicon/site.webmanifest' %}">
-    <script src="{% static 'mainapp/js/script.js' %}"></script>
+    <meta charset="utf-8">
     <title>
         {% block title %}
         {% endblock %}
     </title>
+    <meta name="description" content="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="title">
+    <meta property="og:type" content="type">
+    <meta property="og:url" content="url">
+    <meta property="og:image" content="image">
+
+    <link rel="stylesheet" href="{% static 'mainapp/css/main.css' %}" type="text/css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'mainapp/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'mainapp/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'mainapp/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'mainapp/favicon/site.webmanifest' %}">
+
+    <meta name="theme-color" content="#fafafa">
 </head>
 <body>
-{% if user.is_authenticated %}
-<div class="name-lol">
-    <a class="name-nav-link-child" aria-current="page">
-        CUR_USER: {{ user.username }}
-    </a>
+<div class="wrapper">
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo"></a>
+            <div class="header__menu menu">
+                <div class="menu__icon">
+                    <span></span>
+                </div>
+                <nav class="menu__body">
+                    <ul class="menu__list">
+                        <li><a data-goto=".page" href="#" class="menu__link">Main</a></li>
+                        <li><a data-goto=".services" href="#" class="menu__link">Services</a></li>
+                        <li><a data-goto=".footer" href="#" class="menu__link">Contacts</a></li>
+                        <li><a data-goto="" href="#" class="menu__link">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 </div>
-{% endif %}
-<!--    -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <i class="fa-1x fa fa-compass" aria-hidden="true"></i>
-        <a class="navbar-brand name-navigationbar">GORGEOUS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">
-                        <i class="fa fa-home" aria-hidden="true"></i>HOME
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">
-                        <i class="fa fa-question" aria-hidden="true"></i>ABOUT
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'news' %}">
-                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>NEWS
-                    </a>
-                </li>
-                {% if user.is_superuser %}
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/admin">
-                        <i class="fa fa-lock" aria-hidden="true"></i>ADMIN
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-contacts-item">
+                <span class="footer-contacts-text">Phone</span>
+                <a href="tel:+2281337322" class="footer-contacts-value">+228 1337 322</a>
+            </div>
+            <div class="footer-contacts-item">
+                <span class="footer-contacts-text">Address</span>
+                <address class="footer-contacts-value">493 Ulica Roschi</address>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="footer-column">
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-list list-reset">
+                    <li class="footer-item"><a href="#" class="footer-link">Strategy Design</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Product Design</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Content Strategy</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Brand Strategy</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Help and advice</h3>
+                <ul class="footer-list list-reset">
+                    <li class="footer-item"><a href="#" class="footer-link">How it works</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Contact Support</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-list list-reset">
+                    <li class="footer-item"><a href="#" class="footer-link">About</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Blog</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Contact</a></li>
+                    <li class="footer-item"><a href="#" class="footer-link">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-title">Get in touch</h3>
+                <p class="footer-text">Feel free to get in touch with us via email</p>
+                <a href="mailto:roma.kornushko@gmail.com" class="footer-mail">info.gorgeous@gmail.com</a>
+                <ul class="social list-reset">
+                    <li class="social-item"><a href="#" class="social-link social-link-git" target="_blank"
+                                               aria-label="Link to GitHub"></a></li>
+                    <li class="social-item"><a href="#" class="social-link social-link-vk" target="_blank"
+                                               aria-label="Link to VK"></a></li>
+                    <li class="social-item"><a href="#" class="social-link social-link-gm" target="_blank"
+                                               aria-label="Link to Gmail"></a></li>
+                    <li class="social-item"><a href="#" class="social-link social-link-in" target="_blank"
+                                               aria-label="Link to Linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a class="logo">
+                <img src="#" alt="Gorgeous">
+            </a>
+            <small class="copyright">&copy;&nbsp;2022@gorgeous. All Rights Reserved</small>
         </div>
     </div>
-    <ul class="navbar-nav">
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'profile' user.profile.slug %}">
-                ACCOUNT
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'logout' %}">
-                LOGOUT
-            </a>
-        </li>
-        {% else %}
-        <li>
-            <a class="nav-link" aria-current="page" href="{% url 'register' %}">
-                REGISTRATION
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'login' %}">
-                LOGIN
-            </a>
-        </li>
-        {% endif %}
-    </ul>
-</nav>
-<div class="container">
-    {% block content %}
-    {% endblock %}
-</div>
+</footer>
+<script src="{% static 'mainapp/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+<script src="{% static 'mainapp/js/plugins.js' %}"></script>
+<script src="{% static 'mainapp/js/main.js' %}"></script>
+
 </body>
 </html>
