@@ -1,4 +1,4 @@
-PATCH 0.5.2lst
+PATCH 0.5.2lst 
  _________________________________________________________________________________________________________
 | 1) Added new feature: leaving comments under articles (particular model, two foreign key).              |
 | 2) Faster local server server.                                                                          |
