@@ -1,6 +1,6 @@
 FRONT PATCH 0.1
  ________________________________________________________________________________________________________
 | 1) Started deploy new design from @Kondaro.                                                            |
-| 2) Renew NavBar, Main page.                                                                            |
+| 2) Renew NavBar, Main page, remove About page.                                                         |
 | 3) Added footer with context.                                                                          |
 |________________________________________________________________________________________________________|
