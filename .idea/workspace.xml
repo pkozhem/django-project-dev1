@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cc895e84-9de7-4bd3-b9bf-294a09d64947" name="Changes" comment="Initial commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="front" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/headproject/newsapp/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/headproject/users/views.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CUArHT8nNtScXBUQ3doZpk1MYI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/pkozhem/Developer/Django Projects/django-project-dev1/headproject/mainapp/templates/mainapp&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/headproject/mainapp/templates/mainapp" />
+      <recent name="$PROJECT_DIR$/headproject/mainapp/static/mainapp" />
+      <recent name="$PROJECT_DIR$/headproject/mainapp/static/mainapp/css" />
+      <recent name="$PROJECT_DIR$/headproject/mainapp/static/mainapp/js" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="site1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/headproject" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/headproject/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc895e84-9de7-4bd3-b9bf-294a09d64947" name="Changes" comment="" />
+      <created>1658846987791</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658846987791</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1658852606427</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658852606427</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1658852649483</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658852649483</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit">
+      <created>1658852911513</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658852911513</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Check PATCH 0.5.2lst">
+      <created>1658887410340</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658887410340</updated>
+    </task>
+    <task id="LOCAL-00005" summary="PATCH 0.5.2lst">
+      <created>1658887425169</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658887425169</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initial commit">
+      <created>1659012468652</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659012468652</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Initial commit">
+      <created>1659012506116</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659012506116</updated>
+    </task>
+    <task id="LOCAL-00008" summary="PATCH 0.5.2lst">
+      <created>1659012591079</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659012591079</updated>
+    </task>
+    <task id="LOCAL-00009" summary="PATCH 0.5.2lst">
+      <created>1659012668056</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659012668056</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Initial commit">
+      <created>1659185526717</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1659185526717</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial commit">
+      <created>1659185570266</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659185570266</updated>
+    </task>
+    <task id="LOCAL-00012" summary="CHECK Front Patch 0.1">
+      <created>1659361087605</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659361087605</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Front Patch 0.1">
+      <created>1659361361648</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659361361648</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Front Patch 0.1">
+      <created>1659361412244</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659361412244</updated>
+    </task>
+    <task id="LOCAL-00015" summary="FRONT PATCH 0.1">
+      <created>1659361628875</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659361628875</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Check FRONT PATCH 0.1">
+      <created>1659361672151</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1659361672151</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Check FRONT PATCH 0.1">
+      <created>1659361681281</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1659361681281</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Initial commit">
+      <created>1659362016458</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1659362016458</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Initial commit">
+      <created>1659362044432</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1659362044432</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Initial commit">
+      <created>1659362057736</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1659362057736</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Initial commit">
+      <created>1659362083377</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1659362083377</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Check PATCH 0.5.2lst" />
+    <MESSAGE value="PATCH 0.5.2lst" />
+    <MESSAGE value="CHECK Front Patch 0.1" />
+    <MESSAGE value="Front Patch 0.1" />
+    <MESSAGE value="FRONT PATCH 0.1" />
+    <MESSAGE value="Check FRONT PATCH 0.1" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+</project>
