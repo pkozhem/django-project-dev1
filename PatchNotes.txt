@@ -1,38 +1,6 @@
-PATCH 0.5.2lst
- _________________________________________________________________________________________________________
-| 1) Added new feature: leaving comments under articles (particular model, two foreign key.               |
-| 2) Faster local server server.                                                                          |
-| 3) Better file system for media.                                                                        |
-| 4) Small bug fixes with articles.                                                                       |
-| 5) Beautiful site redesign from @Kondaro is being developed.                                            |
-| 6) Project documentation is being written.                                                              |
-|_________________________________________________________________________________________________________|
-
-PATCH 0.5.1
- _________________________________________________________________________________________________________
-| 1) Added beautiful change info form with on-screen success messages.                                    |
-| 2) Added change password form.                                                                          |
-| 3) Added some on-screen messages in registration and login form.                                        |
-| 4) Small bug fix.                                                                                       |
-|_________________________________________________________________________________________________________|
-
-PATCH 0.5
- _________________________________________________________________________________________________________
-| 1) Added two forms:                                                                                     |
-|    - UserUpdateForm (username, first and last names fields to update),                                  |
-|    - ProfileUpdateForm (bio, image fields to update).                                                   |
-| 2) Beautiful User Profile, contains user info and two buttons: 'change profile' and 'change password'   |
-|    (change profile button functional can be used fully, beauty of this URL come soon. Change password   |
-|     button doesn't available yet, come soon, prob next patch                                            |
-|_________________________________________________________________________________________________________|
-
-PATCH 0.4
-_________________________________________________________________________________________________________
-| 1) Added new model 'Profile' with 'user' OneToOne Field to model 'User', contains following fields:     |
-|     - user (OneToOneField),                                                                             |
-|     - bio (TextField),                                                                                  |
-|     - image (ImageField, with default pic and upload file system),                                      |
-|     - slug (AutoSlugField, populate_from username).                                                     |
-| 2) New model 'Profile' is created when user is created due signals.py configuration.                    |
-| 3) Add media files upload file system.                                                                  |
-|_________________________________________________________________________________________________________|
+Front Patch 0.1
+ ________________________________________________________________________________________________________
+| 1) Started deploy new design from @Kondaro.                                                            |
+| 2) Renew NavBar, Main page.                                                                            |
+| 3) Added footer with context.                                                                          |
+|________________________________________________________________________________________________________|
