@@ -38,10 +38,20 @@
                 </div>
                 <nav class="menu__body">
                     <ul class="menu__list">
-                        <li><a data-goto=".page" href="#" class="menu__link">Main</a></li>
+                        <li><a data-goto=".page" href="#" class="menu__link">Home</a></li>
                         <li><a data-goto=".services" href="#" class="menu__link">Services</a></li>
                         <li><a data-goto=".footer" href="#" class="menu__link">Contacts</a></li>
-                        <li><a data-goto="" href="#" class="menu__link">Login</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a data-goto="" href="{% url 'profile' user.profile.slug %}" class="menu__link">Account</a></li>
+                        <li><a data-goto="" href="{% url 'logout' %}" class="menu__link">Logout</a></li>
+                        {% else %}
+                        <li><a data-goto="" href="{% url 'register' %}" class="menu__link">Register</a></li>
+                        <li><a data-goto="" href="{% url 'login' %}" class="menu__link">Login</a></li>
+                        {% endif %}
+
+                        {% if user.is_superuser %}
+                        <li><a data-goto="" href="http://127.0.0.1:8000/admin" class="menu__link">Admin</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
