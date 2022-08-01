@@ -1,4 +1,4 @@
-Front Patch 0.1
+FRONT PATCH 0.1
  ________________________________________________________________________________________________________
 | 1) Started deploy new design from @Kondaro.                                                            |
 | 2) Renew NavBar, Main page.                                                                            |
