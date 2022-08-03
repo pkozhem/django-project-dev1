@@ -6,7 +6,6 @@ from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from .forms import UserCreationFormFix, UserUpdateForm, ProfileUpdateForm
 from .models import Profile
-from newsapp.models import Articles
 
 User = get_user_model()
 
