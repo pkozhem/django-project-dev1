@@ -26,7 +26,7 @@ class Articles(models.Model):
 
     class Meta:
         verbose_name = 'Article'
-        verbose_name_plural = 'News'
+        verbose_name_plural = 'Articles'
 
 
 class Comment(models.Model):
@@ -34,3 +34,10 @@ class Comment(models.Model):
     content = models.TextField('Comment')
     date = models.DateTimeField('Publish date', auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.pk} PK comment details'
+
+    class Meta:
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
