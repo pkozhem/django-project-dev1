@@ -21,6 +21,7 @@ class Register(TemplateView):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+            print('test)
             return redirect('home')
 
         messages.error(request, f'Invalid credentials. Try again')
