@@ -17,6 +17,7 @@ class Register(TemplateView):
         form = UserCreationFormFix(request.POST) or None
         if form.is_valid():
             form.save()
+            print('user')
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
