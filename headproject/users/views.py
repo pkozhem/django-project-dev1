@@ -5,7 +5,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from .forms import UserCreationFormFix, UserUpdateForm, ProfileUpdateForm
-from .models import Profile
 
 User = get_user_model()
 
@@ -42,7 +41,8 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     template_name = 'users/change_info.html'
 
     def post(self, request, slug):
-        pic_path_current = str(Profile.objects.get(user=request.user).image)
+        current_user_query_set = User.objects.get(username=request.user)
+        pic_path_current = str(current_user_query_set.profile.image)
         post_data = request.POST or None
         file_data = request.FILES or None
 
@@ -52,7 +52,8 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            pic_path_new = str(Profile.objects.get(user=request.user).image)
+            current_user_query_set.profile.image.slug = current_user_query_set.username
+            pic_path_new = str(current_user_query_set.profile.image)
             messages.success(request, f'Your account has been successfully updated')
             if pic_path_current != pic_path_new and pic_path_current != 'default.png':
                 os.remove('users/media/' + pic_path_current)
