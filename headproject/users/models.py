@@ -1,6 +1,5 @@
 from autoslug.utils import slugify
 from django.contrib.auth.models import AbstractUser
-from autoslug import AutoSlugField
 from django.db import models
 from PIL import Image
 
