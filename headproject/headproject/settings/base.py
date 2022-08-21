@@ -14,8 +14,7 @@ from pathlib import Path
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,14 +22,10 @@ print(BASE_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 env = environ.Env()
-environ.Env.read_env(env_file=os.path.join(BASE_DIR, 'headproject/.env'))
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, 'headproject/settings/.env'))
 
 SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -76,17 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'headproject.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
