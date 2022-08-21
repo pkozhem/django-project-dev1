@@ -46,7 +46,7 @@ Upcoming features:
    requirements.txt via this command in console/terminal (make sure you are on the manage.py level
    in console/terminal):
    ```
-    python3 -m pip install -r requirements.txt
+    python3 -m pip install -r requirements/prod.txt
    ```
 5) Run local server via this command in console/terminal (make sure you are on the manage.py level
    in console/terminal):
