@@ -19,7 +19,7 @@ Site has the following features:
  6) Smart articles feed.
  8) Personal user profile.
  9) Change user profile information and avatar.
-10) Leaving comments unser articles.
+10) Leaving comments under articles.
  </pre>
  
  <pre>
@@ -34,25 +34,53 @@ Upcoming features:
 </pre>
 ------------
 <h2>Installation</h2>
-
-1) Make sure if you have Python, Git and pip package on your computer.
-2) Clone this repository into your blank project via this command in console/terminal:
-    ```
+1) Install all required solutions.
+   ```
+    sudo apt-get update
+    sudo apt-get install -y git python3-venv python3-pip vim
     git clone https://github.com/pkozhem/django-project-dev1.git
-    ```
-3) Create virtual environment (venv) in your project and activate it. Make sure
-   if your venv has Python Interpreter.
-4) Install all Frameworks, APIs, plugins and libraries, which are registered in
-   requirements.txt via this command in console/terminal (make sure you are on the manage.py level
-   in console/terminal):
+    cd django-project-dev1
    ```
-    python3 -m pip install -r requirements/dev.txt
+2) Create and activate virtual environment.
    ```
-5) Run local server via this command in console/terminal (make sure you are on the manage.py level
-   in console/terminal):
+    python3 -m venv venv
+    source venv/bin/activate
    ```
-   python3 manage.py runserver
+3) a) If you want production version, install all frameworks and libraries for production.
    ```
-6) Use your local host URL to enter and iteract with site.
-7) If you are done with site, repeat command in your console/terminal from fifth paragraph to stop 
-   the server (make sure you are on the manage.py level in console/terminal).
+    python3 -m pip install -r headproject/requirements/prod.txt
+   ```
+   b) If you want development version, install all frameworks and libraries for development.
+   ```
+    python3 -m pip install -r headproject/requirements/dev.txt
+   ```
+4) Set your environment variables.
+   ```
+    nano headproject/headproject/settings/env.template
+   ```
+   Don't forget to save and exit (ctrl+s, ctrl+x). Then do this.
+   ```
+    cp headproject/headproject/settings/.env.template headproject/headproject/settings/.env 
+   ```
+5) If you chose production version.
+   ```
+    nano headproject/headproject/settings/prod.py
+   ```
+   Find ALLOWED_HOSTS variable and input between [ ] needed IP address in ' ', example: ALLOWED_HOSTS = ['127.0.0.1:8000', 'localhost:8001'].
+   Don't forget to save and exit (ctrl+s, ctrl+x).
+6) ```
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+   ```
+7) To run app locally.<br>
+   a) Using production settings:
+      ```
+       python3 manage.py runserver --settings=headproject.settings.prod
+      ```
+   b) Using development settings:
+      ```
+       python3 manage.py runserver --settings=headproject.settings.dev
+      ```
+   ----------
+8) To run this app on server you can choose any solution stack (for example Linux + NGINX + Gunicorn) 
+   and setup them as you want.

@@ -6,3 +6,4 @@ Pillow==9.2.0
 sqlparse==0.4.2
 thumbnail==1.5
 tzdata==2022.1
+gunicorn==20.1.0
