@@ -34,6 +34,7 @@ Upcoming features:
 </pre>
 ------------
 <h2>Installation</h2>
+
 1) Install all required solutions.
    ```
     sudo apt-get update
